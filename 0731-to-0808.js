@@ -43,16 +43,16 @@ prefill (3, "abcde")
 function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMonth){
   var months = 0
   var totalSaved = 0
-  while (startPriceNew > startPriceOld + moneySaved){
-    totalSaved += savingperMonth;
-    startPriceOld -= (startPriceOld * (percentLossByMonth / 100));
-    startPriceNew -= (startPriceNew * (percentLossByMonth / 100));
-    months++;
+  while (startPriceNew > startPriceOld + totalSaved){
+    totalSaved += savingperMonth
+    startPriceOld -= (startPriceOld * (percentLossByMonth / 100))
+    startPriceNew -= (startPriceNew * (percentLossByMonth / 100))
+    months++
     if (months % 2 == 1){
-      percentLossByMonth += .5;
+      percentLossByMonth += .5
     }
   }
-  return [months, Math.round(startPriceOld + totalSaved - startPriceNew)];
+  console.log([months, Math.round(startPriceOld + totalSaved - startPriceNew)])
 }
 
 nbMonths(2000, 8000, 1000, 1.5)
