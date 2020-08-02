@@ -52,7 +52,41 @@ function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMon
       percentLossByMonth += .5
     }
   }
-  console.log([months, Math.round(startPriceOld + totalSaved - startPriceNew)])
+  return [months, Math.round(startPriceOld + totalSaved - startPriceNew)]
 }
 
 nbMonths(2000, 8000, 1000, 1.5)
+
+// ***** Day 3: 08.02.2020 6kyu kata*****
+// You have an array of numbers.
+// Your task is to sort ascending odd numbers but even numbers must be on their places.
+// Zero isn't an odd number and you don't need to move it. If you have an empty array, you need to return it.
+// Example: sortArray([5, 3, 2, 8, 1, 4]) == [1, 3, 2, 8, 5, 4]
+
+function sortArray(array) {
+  var oddArray = []
+  var index =  0
+
+  if (array.length < 0){
+    return []
+  }
+
+  for (let i = 0; i < array.length ; i++){
+    if (array[i] % 2 !== 0){
+      oddArray.push(array[i])
+    }
+  }
+
+  oddArray.sort(function(a, b){return a-b})
+
+  for (let j = 0; j < array.length ; j++){
+    if(array[j] % 2 !==0){
+      array[j] = oddArray[index]
+      index +=1
+    }
+  }
+
+  return array
+}
+
+sortArray([5, 3, 2, 8, 1, 4])
