@@ -41,21 +41,18 @@ prefill (3, "abcde")
 // Can you help him? How many months will it take him to save up enough money to buy the car he wants, and how much money will he have left over?
 
 function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMonth){
-  var totalSavings = 0
-  for(let month=0 ; month <= 12; month++){
-    if (totalSavings + startPriceOld <= startPriceNew){
-      if (month % 2 === 0 && month > 1){
-        percentLossByMonth += 0.5
-      }
-      totalSavings += savingperMonth
-      startPriceOld = startPriceOld - Math.floor(startPriceOld * (percentLossByMonth/100))
-      startPriceNew = startPriceNew - Math.floor(startPriceNew * (percentLossByMonth/100))
-    } else {
-    console.log([month, (totalSavings + startPriceOld) - startPriceNew])
-    break
+  var months = 0
+  var totalSaved = 0
+  while (startPriceNew > startPriceOld + moneySaved){
+    totalSaved += savingperMonth;
+    startPriceOld -= (startPriceOld * (percentLossByMonth / 100));
+    startPriceNew -= (startPriceNew * (percentLossByMonth / 100));
+    months++;
+    if (months % 2 == 1){
+      percentLossByMonth += .5;
+    }
   }
-  }
+  return [months, Math.round(startPriceOld + totalSaved - startPriceNew)];
 }
 
 nbMonths(2000, 8000, 1000, 1.5)
-// **Solution not 100% complete yet**
