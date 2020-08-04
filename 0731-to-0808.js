@@ -1,10 +1,25 @@
+// ***** Day 5: 08.04.2020 6kyu kata*****
+// Given an array of integers, find the one that appears an odd number of times.
+// There will always be only one integer that appears an odd number of times.
+
+function findOdd(A) {
+  var result
+  for(let i = 0; i < A.length; i++){
+   var numAppeared = A.filter(item => item == A[i]).length
+   if (numAppeared % 2 != 0){
+     result = A[i]
+   }
+  }
+  return result
+}
+
+findOdd([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]) // =>, 5
+
 // ***** Day 4: 08.03.2020 6kyu kata*****
 // For building the encrypted string:
 // Take every 2nd char from the string, then the other chars, that are not every 2nd char, and concat them as new String.
 // Do this n times!
-// Examples:
-// "This is a test!", 1 -> "hsi  etTi sats!"
-// "This is a test!", 2 -> "hsi  etTi sats!" -> "s eT ashi tist!"
+
 // Write two methods:
 // function encrypt(text, n)
 // function decrypt(encryptedText, n)
