@@ -1,3 +1,41 @@
+// ***** Day 7: 08.06.2020 6kyu kata*****
+// We shall assign the following values: a = 1, b = 2, c = 3, .... z = 26.
+// For example, for the word "zodiacs", let's cross out the vowels. We get: "z o d ia cs"
+// -- The consonant substrings are: "z", "d" and "cs" and the values are z = 26, d = 4 and cs = 3 + 19 = 22. The highest is 26.
+// solve("zodiacs") = 26
+
+function solve(s) {
+  var arr = s.split('')
+  var alphabet = ['*','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+  var vowels = ['a','e','i','o','u']
+  var prevIndex = 0
+  var highest = []
+  var sums = []
+
+  for(let i=0; i < arr.length; i++){
+    if (vowels.includes(arr[i])){
+        arr[i] = 0
+    } else {
+      arr[i] = alphabet.indexOf(arr[i])
+    }
+
+    if(arr[i] !==0){
+      highest.push(arr.slice(prevIndex, i+1))
+    } else {
+      prevIndex = i
+    }
+  }
+
+  for(let j=0; j < highest.length; j++){
+    sums.push(highest[j].reduce((sum, current) => sum + current, 0))
+  }
+
+  sums.sort((a,b) => a-b)
+  return sums[sums.length-1]
+};
+
+solve('zodiacs')
+
 // ***** Day 6: 08.05.2020 6kyu kata*****
 // Find the length of the longest substring in the given string s that is the same in reverse.
 // As an example, if the input was “I like racecars that go fast”, the substring (racecar) length would be 7.
