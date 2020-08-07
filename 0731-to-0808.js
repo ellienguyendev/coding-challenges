@@ -1,3 +1,19 @@
+// ***** Day 8: 08.07.2020 6kyu kata*****
+// Complete the solution so that the function will break up camel casing, using a space between words.
+// Example: solution("camelCasing")  ==  "camel Casing"
+
+function solution(string) {
+  var arr = string.split('')
+  for(let i=0; i<arr.length; i++){
+    if(arr[i] == arr[i].toUpperCase()){
+      arr[i] = ' ' + arr[i]
+    }
+  }
+  return arr.join('')
+}
+
+solution('stacyIsCool')
+
 // ***** Day 7: 08.06.2020 6kyu kata*****
 // We shall assign the following values: a = 1, b = 2, c = 3, .... z = 26.
 // For example, for the word "zodiacs", let's cross out the vowels. We get: "z o d ia cs"
