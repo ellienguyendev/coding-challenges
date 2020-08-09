@@ -1,4 +1,4 @@
-// ***** Day 8: 08.07.2020 6kyu kata*****
+// ***** Day 9: 08.08.2020 6kyu kata*****
 // In this Kata, we are going to reverse a string while maintaining the spaces (if any) in their original place.
 // For example:
 // solve("our code") = "edo cruo"
@@ -10,14 +10,19 @@
 function reverse(str){
   var arr = str.split('')
   var indexes = []
+
   for(let i=0; i<arr.length; i++){
-    if(arr[i] === ' '){
+    if(arr[i] === " "){
       indexes.push(i)
-      console.log(indexes)
     }
   }
-  str = arr.reverse().join('')
-  console.log(str)
+
+  arr = str.split(' ').join('').split('').reverse()
+
+  for (let j=0; j<indexes.length; j++){
+    arr.splice(indexes[j],0," ")
+  }
+  return arr.join('')
 }
 
 reverse('hello puppy i love you')
