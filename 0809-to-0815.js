@@ -1,3 +1,20 @@
+// Day 12 08.11.2020 Leetcode Two Sum 
+// Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+// You may assume that each input would have exactly one solution, and you may not use the same element twice.
+// Given nums = [2, 7, 11, 15], target = 9 => return [0, 1]
+
+var twoSum = function(nums, target) {
+  var indexes = []
+  for(let i=0; i<nums.length; i++){
+    for(let j=0+1; j<nums.length; j++){
+      if(nums[i] + nums[j] === target && i != j){
+        indexes.push([i,j])
+      }
+    }
+  }
+    return (indexes[0])
+};
+
 // Day 11 08.10.2020 Leetcode Single Number
 // Given a non-empty array of integers, every element appears twice except for one. Find that single one.
 // Note: Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
