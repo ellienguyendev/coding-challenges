@@ -1,4 +1,40 @@
-// Day 12 08.11.2020 Leetcode Two Sum 
+// Day 13 08.12.2020 Codewar The Vowel Code
+// Step 1: Create a function called encode() to replace all the lowercase vowels in a given string with numbers according to the following pattern:
+// a -> 1
+// e -> 2
+// i -> 3
+// o -> 4
+// u -> 5
+// For example, encode("hello") would return "h2ll4"
+
+function encode(string) {
+  var arr = string.split('')
+  var vowels = ['a','e','i','o','u']
+  for (let i = 0; i < arr.length; i++){
+    if (vowels.includes(arr[i])){
+      arr[i] = vowels.indexOf(string[i]) + 1
+    }
+  }
+  return arr.join('')
+}
+
+function decode(string) {
+  var arr = string.split('')
+  console.log(arr)
+  var numbers = ['1','2','3','4','5']
+  var vowels = ['a','e','i','o','u']
+  for (let i = 0; i < arr.length; i++){
+    if (numbers.includes(arr[i])){
+      arr[i] = vowels[parseFloat(arr[i])-1]
+    }
+  }
+  return arr.join('')
+}
+
+encode('hello')
+decode('h2ll4')
+
+// Day 12 08.11.2020 Leetcode Two Sum
 // Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 // You may assume that each input would have exactly one solution, and you may not use the same element twice.
 // Given nums = [2, 7, 11, 15], target = 9 => return [0, 1]
