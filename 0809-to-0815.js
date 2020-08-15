@@ -1,3 +1,10 @@
+// Day 15 08.14.2020 Codewar 8kyu - Javascript
+// The starship Enterprise has run into some problem when creating a program to greet everyone as they come aboard. It is your job to fix the code and get the program working again!
+
+function sayHello(name) {
+  return 'Hello ' + name
+}
+
 // Day 14 08.13.2020 Codewar 6kyu - Javascript
 // We'll create a function that takes in two parameters:
 // a sequence (length and types of items are irrelevant)
