@@ -1,3 +1,26 @@
+// Day 16 08.15.2020 Codewar 7kyu - Javascript
+// Write a function that returns a sequence (index begins with 1) of all the even characters from a string. If the string is smaller than two characters or longer than 100 characters, the function should return "invalid string".
+// For example:
+// "abcdefghijklm" --> ["b", "d", "f", "h", "j", "l"]
+// "a"             --> "invalid string"
+
+function evenChars(string) {
+  var arr = []
+  var length = string.length
+
+  if(length < 2 || length > 100){
+    return 'invalid string'
+  }
+
+  for(let i = 1; i<= length; i++){
+    if(i % 2 === 0){
+      arr.push(string[i-1])
+    }
+  }
+
+  return arr
+}
+
 // Day 15 08.14.2020 Codewar 8kyu - Javascript
 // The starship Enterprise has run into some problem when creating a program to greet everyone as they come aboard. It is your job to fix the code and get the program working again!
 
