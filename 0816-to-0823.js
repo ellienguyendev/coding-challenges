@@ -1,16 +1,15 @@
-// Day 19 08.18.2020 Leetcode Plus One
-// Given a non-empty array of digits representing a non-negative integer, increment one to the integer.
-// The digits are stored such that the most significant digit is at the head of the list, and each element in the array contains a single digit.
-// You may assume the integer does not contain any leading zero, except the number 0 itself.
-// Example 1:
-// Input: [1,2,3]
-// Output: [1,2,4]
-// Explanation: The array represents the integer 123.
+// Day 21 08.20.2020 Codewar 7kyu Kata
+// Finish the solution so that it sorts the passed in array of numbers. If the function passes in an empty array or null/nil value then it should return an empty array.
 
-var plusOne = function(digits) {
-  var num = parseFloat(digits.join('')) + 1
-  return num.split('')
-};
+function solution(nums){
+  if (nums === null || nums.length === 0){
+    return []
+  }
+  nums.sort((a,b) => a - b)
+  return nums
+}
+
+// Days 19 + 20 in separate Python files
 
 // Day 18 08.17.2020 Leetcode Contains Duplicate
 // Given an array of integers, find if the array contains any duplicates.
