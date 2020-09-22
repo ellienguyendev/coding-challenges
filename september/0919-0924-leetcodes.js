@@ -1,4 +1,4 @@
-// 9.19.2020 Best Time to Buy and Sell Stock II
+// 09.19.2020 Best Time to Buy and Sell Stock II
 // https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
 
 /**
@@ -16,7 +16,7 @@ var maxProfit = function(prices) {
     return profit;
 };
 
-// 9.20.2020 Leetcode Cells with Odd Values in a Matrix
+// 09.20.2020 Leetcode Cells with Odd Values in a Matrix
 // https://leetcode.com/problems/cells-with-odd-values-in-a-matrix/
 
 /**
@@ -41,4 +41,23 @@ var oddCells = function (n, m, indices) {
     }
   }
   return count;
+};
+
+// 09.21.2020 Leetcode Decompress Run-Length Encoded List
+// https://leetcode.com/problems/decompress-run-length-encoded-list/
+
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var decompressRLElist = function (nums) {
+  const res = [];
+
+  for (let i = 0; i < nums.length; i += 2) {
+    for (let j = 0; j < nums[i]; j++) {
+      res.push(nums[i + 1])
+    }
+  }
+
+  return res;
 };
