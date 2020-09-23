@@ -61,3 +61,32 @@ var decompressRLElist = function (nums) {
 
   return res;
 };
+
+// 09.22.2020 Leetcode Lucky Numbers in a Matrix
+// https://leetcode.com/problems/lucky-numbers-in-a-matrix/
+
+/**
+ * @param {number[][]} matrix
+ * @return {number[]}
+ */
+var luckyNumbers = function(matrix) {
+  let minRow = [], maxCol = []
+
+  for(let i in matrix) {
+    minRow.push(Math.min.apply(null, matrix[i]))
+  }
+
+  for(let i in matrix[0]) {
+    let max = 0
+
+    for(let j in matrix){
+      if(matrix[j][i] > max) {
+        max = matrix[j][i]
+      }
+    }
+
+    maxCol.push(max)
+  }
+
+  return minRow.filter(n => maxCol.includes(n))
+}
