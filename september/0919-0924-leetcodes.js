@@ -90,3 +90,23 @@ var luckyNumbers = function(matrix) {
 
   return minRow.filter(n => maxCol.includes(n))
 }
+
+// 09.23.2020 Sum of All Odd Length Subarrays
+// https://leetcode.com/problems/sum-of-all-odd-length-subarrays/submissions/
+
+/**
+ * @param {number[]} arr
+ * @return {number}
+ */
+let sumOddLengthSubarrays = (arr, sum = 0) => {
+    let length = arr.length;
+    let sumArr = Array(length + 1).fill(0);
+    for (let i = 1; i <= length; ++i){
+        sumArr[i] = sumArr[i - 1] + arr[i - 1];
+    }
+    for (let i = 0; i < length; ++i)
+        for (let j = 1; i + j <= length; j += 2){
+            sum += sumArr[i + j] - sumArr[i]
+       }
+    return sum;
+};
