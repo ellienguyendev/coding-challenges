@@ -110,3 +110,27 @@ let sumOddLengthSubarrays = (arr, sum = 0) => {
        }
     return sum;
 };
+
+// 09.24.2020 Valid Parentheses
+//https://leetcode.com/problems/valid-parentheses/
+
+const isValid = (s) => {
+  const possibleInputs = {
+    '(' : ')',
+    '[' : ']',
+    '{' : '}'
+  }
+  let stack = []
+  for(let i = 0; i< s.length; i++){
+    let current = s[i]
+    if(possibleInputs[current]{
+      stack.push(possibleInputs[current])
+    }
+    else {
+      if( current !== stack.pop()){
+        return false
+      }
+    }
+  }
+  return stack.length === 0
+};
