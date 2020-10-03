@@ -21,3 +21,8 @@ var subdomainVisits = function(cpdomains) {
   map.forEach((v, k) => result.push(v + " " + k))
   return result;
 }
+
+# 10.02.2020 Swap
+#https://leetcode.com/problems/swap-salary/
+
+UPDATE salary SET sex = IF(sex='m', 'f', 'm');
