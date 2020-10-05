@@ -67,3 +67,20 @@ var sortArrayByParity = function(A) {
 
     return [...even, ...odd]
 };
+
+// 10.05.2020 Unique Emails
+//https://leetcode.com/problems/unique-email-addresses/submissions/
+
+/**
+ * @param {string[]} emails
+ * @return {number}
+ */
+var numUniqueEmails = function(emails) {
+    const set = new Set();
+    emails.forEach(email => {
+        const [dirtyLocal, domain] = email.split('@');
+        const cleanLocal = dirtyLocal.split('+')[0].split('.').join('');
+        set.add(`${cleanLocal}@${domain}`);
+    })
+    return set.size;
+};
