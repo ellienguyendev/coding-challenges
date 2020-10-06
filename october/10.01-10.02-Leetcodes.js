@@ -1,5 +1,5 @@
-# 10.01.2020 Subdomain Visit
-# https://leetcode.com/problems/subdomain-visit-count/
+// 10.01.2020 Subdomain Visit
+// https://leetcode.com/problems/subdomain-visit-count/
 
 /**
  * @param {string[]} cpdomains
@@ -22,7 +22,7 @@ var subdomainVisits = function(cpdomains) {
   return result;
 }
 
-# 10.02.2020 Swap
-#https://leetcode.com/problems/swap-salary/
+// 10.02.2020 Swap Genders
+// https://leetcode.com/problems/swap-salary/
 
 UPDATE salary SET sex = IF(sex='m', 'f', 'm');
