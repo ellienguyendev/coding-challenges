@@ -22,7 +22,7 @@ var subdomainVisits = function(cpdomains) {
   return result;
 }
 
-// 10.02.2020 Swap
+// 10.02.2020 Swap Genders
 // https://leetcode.com/problems/swap-salary/
 
 UPDATE salary SET sex = IF(sex='m', 'f', 'm');
