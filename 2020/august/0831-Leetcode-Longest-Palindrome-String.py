@@ -5,6 +5,8 @@
 # Output: "bab"
 # Note: "aba" is also a valid answer.
 
+
+
 class Solution(object):
     def longestPalindrome(self, s):
         """
